@@ -12,6 +12,7 @@ public class FileHandler {
     public FileHandler() {
         this.fileName = "szotar.txt";
         this.wordPairList = new ArrayList<>();
+
     }
     public void readFile() {
         try {
@@ -24,6 +25,7 @@ public class FileHandler {
     public void tryReadFile() throws FileNotFoundException {
         File file = new File(this.fileName);
         Scanner scanner = new Scanner(file, "utf-8");
+
         while(scanner.hasNextLine()) {
             String line = scanner.nextLine();
             String[] lineArray = line.split(":");
@@ -31,6 +33,7 @@ public class FileHandler {
             this.wordPairList.add(wordPair);
             // System.out.println(line);
         }
+        System.out.println(this.wordPairList.size());
         scanner.close();
     }
 }
